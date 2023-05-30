@@ -1,0 +1,36 @@
+html {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    background: #000;
+    height: 100%;
+  }
+  
+  #videobox {
+    position: absolute;
+    top: 0; left: 0;
+    transform-origin: left top;
+    transform: scale(1.1);
+    opacity: 0;  /* videoを非表示にするとiOSで動かなくなるので透明にしておく */
+  }
+  
+  #video {
+    display: block;
+  }
+  
+  #canvas {
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 90%;
+    /* opacity: 0; */
+  }
+  
+  #button {
+    position:absolute;
+    bottom: 5%;
+  }
+  
+  
