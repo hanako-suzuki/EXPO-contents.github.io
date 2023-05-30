@@ -13,6 +13,12 @@ const medias = {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
   const promise = navigator.mediaDevices.getUserMedia(medias);
+
+  const saveButton = document.getElementById('saveButton');
+
+  saveButton.addEventListener('click', () => {
+    saveCanvas(canvas, String(Date.now())+'.png');
+  });
   
   const FPS = 30;
   
@@ -71,6 +77,16 @@ const medias = {
       }
     }
   }
+
+  function saveCanvas(canvas, fileName) {
+    // リンク要素を作成し、画像データを設定します
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL();
+    link.download = fileName;
+
+    // クリックイベントを発生させてリンクをクリックします
+    link.click();
+  }  
   
   function errorCallback(err) {
     alert(err);
